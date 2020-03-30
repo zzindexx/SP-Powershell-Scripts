@@ -35,7 +35,7 @@ foreach ($solution in $solutions)
     foreach ($dll in $dlls)
     {
         $ass = [Reflection.Assembly]::LoadFrom($dll.FullName)
-        $types = $ass.GetTypes() | select Name, Namespace
+        $types = $ass.GetTypes() | Select-Object Name, Namespace
         
         foreach ($type in $types)
         {

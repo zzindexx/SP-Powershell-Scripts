@@ -32,4 +32,4 @@ $NUG = ($NotUsedGroups|Select-Object InputObject)
 $textNUG = $NUG| ForEach-Object {$_.InputObject.Tostring()}
  
 $SPGroups = $web.SiteGroups
-$textNUG | % {$SPGroups.Remove($_)} 
+$textNUG | ForEach-Object {$SPGroups.Remove($_)} 

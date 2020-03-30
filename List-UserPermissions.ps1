@@ -11,7 +11,7 @@ Clear-Host
 
 $user = "i:0#.w|contoso\alice"
 
-Get-SPWebApplication | Get-SPSite -Limit All | Get-SPWeb -Limit All | % {
+Get-SPWebApplication | Get-SPSite -Limit All | Get-SPWeb -Limit All | ForEach-Object {
     $web = $_
     $foundUser = Get-SPUser -Identity $user -Web $web -ErrorAction SilentlyContinue
     if ($foundUser -ne $null) {
